@@ -117,7 +117,7 @@
                                             <subviews>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="50" id="qcK-re-xoU">
                                                     <rect key="frame" x="154" y="11" width="138" height="23"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <action selector="countSliderChanged:" destination="12" eventType="valueChanged" id="JhL-da-rjW"/>
                                                     </connections>
@@ -140,9 +140,9 @@
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minValue="1" maxValue="1000" id="4fD-OO-4I8">
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minValue="1" maxValue="500" id="4fD-OO-4I8">
                                                     <rect key="frame" x="154" y="11" width="138" height="23"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <action selector="timeoutSliderChanged:" destination="12" eventType="valueChanged" id="zct-45-bj1"/>
                                                     </connections>
@@ -174,7 +174,7 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="2D0-w8-lfZ">
                                                     <rect key="frame" x="213" y="8" width="79" height="27"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                                 </switch>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -425,6 +425,30 @@
             <point key="canvasLocation" x="1244" y="64"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AddVenueVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddVenueVC.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelTap:"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="RootVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RootVC.h"/>
+            <relationships>
+                <relationship kind="action" name="countSliderChanged:" candidateClass="UISlider"/>
+                <relationship kind="action" name="timeoutSliderChanged:" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="checkinCountSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="countlabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="publicSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="timeoutLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeoutSlider" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+        <class className="VenuesVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VenuesVC.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
