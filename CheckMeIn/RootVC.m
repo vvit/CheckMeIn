@@ -24,14 +24,14 @@
  */
 
 #import "FSQJSONObjectViewController.h"
-#import "FSQMasterViewController.h"
+#import "RootVC.h"
 #import "VenuesVC.h"
 
 
 #define kClientID       FOURSQUARE_CLIENT_ID
 #define kCallbackURL    FOURSQUARE_CALLBACK_URL
 
-@interface FSQMasterViewController ()
+@interface RootVC ()
 @property(nonatomic,strong) BZFoursquareRequest		*request;
 @property(nonatomic,copy) NSDictionary				*meta;
 @property(nonatomic,copy) NSArray					*notifications;
@@ -68,7 +68,7 @@ enum {
     kResponsesRowCount
 };
 
-@implementation FSQMasterViewController
+@implementation RootVC
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -364,11 +364,20 @@ enum {
     NSLog(@"%s: %@", __PRETTY_FUNCTION__, error);
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:[[error userInfo] objectForKey:@"errorDetail"] delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:nil];
     [alertView show];
+
     self.meta = request.meta;
     self.notifications = request.notifications;
     self.response = request.response;
     self.request = nil;
     [self updateView];
+	
+	//update progress view
+	dispatch_async(dispatch_get_main_queue(), ^{
+		HUD.progress = 1.0;
+		HUD.taskInProgress = NO;
+		[HUD hide:YES];
+	});
+	
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 

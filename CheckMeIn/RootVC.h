@@ -25,14 +25,24 @@
 
 #import <UIKit/UIKit.h>
 #import "BZFoursquare.h"
+#import "MBProgressHUD.h"
 
-@interface FSQAppDelegate : UIResponder <UIApplicationDelegate>
+
+@interface RootVC : UITableViewController <BZFoursquareRequestDelegate, BZFoursquareSessionDelegate>
 {
-	UIWindow    *window_;
+	int					checkinCount, timeoutSeconds;
+	BOOL				publicCheckin;
+	
+	int					checkinsMade;
+	
+	MBProgressHUD		*HUD;
 }
 
-@property(strong,nonatomic) UIWindow *window;
-
-- (BZFoursquare*)foursquareObject;
+@property(nonatomic,strong) BZFoursquare				*foursquare;
+@property (strong, nonatomic) IBOutlet UILabel			*countlabel;
+@property (strong, nonatomic) IBOutlet UILabel			*timeoutLabel;
+@property (strong, nonatomic) IBOutlet UISlider			*checkinCountSlider;
+@property (strong, nonatomic) IBOutlet UISlider			*timeoutSlider;
+@property (strong, nonatomic) IBOutlet UISwitch			*publicSwitch;
 
 @end

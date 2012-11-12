@@ -17,9 +17,9 @@
 		674BDDA41460CE0200320FF0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 674BDDA31460CE0200320FF0 /* CoreGraphics.framework */; };
 		674BDDAA1460CE0200320FF0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 674BDDA81460CE0200320FF0 /* InfoPlist.strings */; };
 		674BDDAC1460CE0200320FF0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 674BDDAB1460CE0200320FF0 /* main.m */; };
-		674BDDB01460CE0200320FF0 /* FSQAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 674BDDAF1460CE0200320FF0 /* FSQAppDelegate.m */; };
+		674BDDB01460CE0200320FF0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 674BDDAF1460CE0200320FF0 /* AppDelegate.m */; };
 		674BDDB31460CE0200320FF0 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 674BDDB11460CE0200320FF0 /* MainStoryboard.storyboard */; };
-		674BDDB61460CE0200320FF0 /* FSQMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 674BDDB51460CE0200320FF0 /* FSQMasterViewController.m */; settings = {COMPILER_FLAGS = "-D'FOURSQUARE_CLIENT_ID=@\"$(FOURSQUARE_CLIENT_ID)\"' -D'FOURSQUARE_CALLBACK_URL=@\"$(FOURSQUARE_CALLBACK_URL)\"'"; }; };
+		674BDDB61460CE0200320FF0 /* RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 674BDDB51460CE0200320FF0 /* RootVC.m */; settings = {COMPILER_FLAGS = "-D'FOURSQUARE_CLIENT_ID=@\"$(FOURSQUARE_CLIENT_ID)\"' -D'FOURSQUARE_CALLBACK_URL=@\"$(FOURSQUARE_CALLBACK_URL)\"'"; }; };
 		674BDDEB14614E8600320FF0 /* BZFoursquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 674BDDE814614E8600320FF0 /* BZFoursquare.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		674BDDEC14614E8600320FF0 /* BZFoursquareRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 674BDDEA14614E8600320FF0 /* BZFoursquareRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		674BDDEF14614ED500320FF0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 674BDDEE14614ED500320FF0 /* MobileCoreServices.framework */; };
@@ -46,11 +46,11 @@
 		674BDDA91460CE0200320FF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		674BDDAB1460CE0200320FF0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		674BDDAD1460CE0200320FF0 /* CheckMeIn-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CheckMeIn-Prefix.pch"; sourceTree = "<group>"; };
-		674BDDAE1460CE0200320FF0 /* FSQAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSQAppDelegate.h; sourceTree = "<group>"; };
-		674BDDAF1460CE0200320FF0 /* FSQAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSQAppDelegate.m; sourceTree = "<group>"; };
+		674BDDAE1460CE0200320FF0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		674BDDAF1460CE0200320FF0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		674BDDB21460CE0200320FF0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		674BDDB41460CE0200320FF0 /* FSQMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSQMasterViewController.h; sourceTree = "<group>"; };
-		674BDDB51460CE0200320FF0 /* FSQMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSQMasterViewController.m; sourceTree = "<group>"; };
+		674BDDB41460CE0200320FF0 /* RootVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootVC.h; sourceTree = "<group>"; };
+		674BDDB51460CE0200320FF0 /* RootVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootVC.m; sourceTree = "<group>"; };
 		674BDDE714614E8600320FF0 /* BZFoursquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZFoursquare.h; sourceTree = "<group>"; };
 		674BDDE814614E8600320FF0 /* BZFoursquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZFoursquare.m; sourceTree = "<group>"; };
 		674BDDE914614E8600320FF0 /* BZFoursquareRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZFoursquareRequest.h; sourceTree = "<group>"; };
@@ -59,8 +59,8 @@
 		D732B40F16075726009D8839 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Images/Default.png; sourceTree = "<group>"; };
 		D732B41216075732009D8839 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Images/Default@2x.png"; sourceTree = "<group>"; };
 		D732B4141607573A009D8839 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Images/Default-568h@2x.png"; sourceTree = "<group>"; };
-		D7F8480E1462649800C0ACDD /* FSQJSONObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSQJSONObjectViewController.h; sourceTree = "<group>"; };
-		D7F8480F1462649800C0ACDD /* FSQJSONObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSQJSONObjectViewController.m; sourceTree = "<group>"; };
+		D7F8480E1462649800C0ACDD /* FSQJSONObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSQJSONObjectViewController.h; path = ../FSQJSONObjectViewController.h; sourceTree = "<group>"; };
+		D7F8480F1462649800C0ACDD /* FSQJSONObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSQJSONObjectViewController.m; path = ../FSQJSONObjectViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +84,8 @@
 				674BDDE614614E8600320FF0 /* BZFoursquare */,
 				5874158A16514DAC00E3AE67 /* MBProgressHUD.h */,
 				5874158B16514DAC00E3AE67 /* MBProgressHUD.m */,
+				D7F8480E1462649800C0ACDD /* FSQJSONObjectViewController.h */,
+				D7F8480F1462649800C0ACDD /* FSQJSONObjectViewController.m */,
 			);
 			name = Componenets;
 			path = ../CheckMeIn/Componenets;
@@ -122,12 +124,10 @@
 			children = (
 				674BDDA61460CE0200320FF0 /* Supporting Files */,
 				5874158916514DAC00E3AE67 /* Componenets */,
-				674BDDAE1460CE0200320FF0 /* FSQAppDelegate.h */,
-				674BDDAF1460CE0200320FF0 /* FSQAppDelegate.m */,
-				D7F8480E1462649800C0ACDD /* FSQJSONObjectViewController.h */,
-				D7F8480F1462649800C0ACDD /* FSQJSONObjectViewController.m */,
-				674BDDB41460CE0200320FF0 /* FSQMasterViewController.h */,
-				674BDDB51460CE0200320FF0 /* FSQMasterViewController.m */,
+				674BDDAE1460CE0200320FF0 /* AppDelegate.h */,
+				674BDDAF1460CE0200320FF0 /* AppDelegate.m */,
+				674BDDB41460CE0200320FF0 /* RootVC.h */,
+				674BDDB51460CE0200320FF0 /* RootVC.m */,
 				674BDDB11460CE0200320FF0 /* MainStoryboard.storyboard */,
 				5874157816512A6300E3AE67 /* VenuesVC.h */,
 				5874157916512A6300E3AE67 /* VenuesVC.m */,
@@ -243,9 +243,9 @@
 			files = (
 				674BDDEB14614E8600320FF0 /* BZFoursquare.m in Sources */,
 				674BDDEC14614E8600320FF0 /* BZFoursquareRequest.m in Sources */,
-				674BDDB01460CE0200320FF0 /* FSQAppDelegate.m in Sources */,
+				674BDDB01460CE0200320FF0 /* AppDelegate.m in Sources */,
 				D7F848101462649800C0ACDD /* FSQJSONObjectViewController.m in Sources */,
-				674BDDB61460CE0200320FF0 /* FSQMasterViewController.m in Sources */,
+				674BDDB61460CE0200320FF0 /* RootVC.m in Sources */,
 				674BDDAC1460CE0200320FF0 /* main.m in Sources */,
 				5874157A16512A6300E3AE67 /* VenuesVC.m in Sources */,
 				5874157D16513B9900E3AE67 /* AddVenueVC.m in Sources */,

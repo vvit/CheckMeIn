@@ -7,7 +7,7 @@
 //
 
 #import "AddVenueVC.h"
-#import "FSQAppDelegate.h"
+#import "AppDelegate.h"
 
 @interface AddVenueVC ()
 @property (strong, nonatomic) NSArray	*dataSource;
@@ -81,7 +81,7 @@
 {
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 
-	FSQAppDelegate *del = [UIApplication sharedApplication].delegate;
+	AppDelegate *del = [UIApplication sharedApplication].delegate;
 	
 	NSDictionary		*parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"Kharkiv, Ukraine", @"near", [NSNumber numberWithInt:50], @"limit", searchTerm, @"query", nil];
 	BZFoursquareRequest *request = [[del foursquareObject] requestWithPath:@"venues/search" HTTPMethod:@"GET" parameters:parameters delegate:self];

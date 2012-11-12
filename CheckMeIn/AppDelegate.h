@@ -23,30 +23,16 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import "FSQAppDelegate.h"
-#import "FSQMasterViewController.h"
+#import <UIKit/UIKit.h>
+#import "BZFoursquare.h"
 
-@implementation FSQAppDelegate
-
-@synthesize window = window_;
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
-	return YES;
+	UIWindow    *window_;
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-	return [[self foursquareObject] handleOpenURL:url];
-}
+@property(strong,nonatomic) UIWindow *window;
 
-- (BZFoursquare*)foursquareObject
-{
-	UINavigationController  *navigationController = (UINavigationController *)window_.rootViewController;
-	FSQMasterViewController *masterViewController = [navigationController.viewControllers objectAtIndex:0];
-	BZFoursquare			*foursquare = masterViewController.foursquare;
-	
-	return foursquare;
-}
+- (BZFoursquare*)foursquareObject;
 
 @end

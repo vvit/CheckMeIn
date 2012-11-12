@@ -23,26 +23,30 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#import <UIKit/UIKit.h>
-#import "BZFoursquare.h"
-#import "MBProgressHUD.h"
+#import "AppDelegate.h"
+#import "RootVC.h"
 
+@implementation AppDelegate
 
-@interface FSQMasterViewController : UITableViewController <BZFoursquareRequestDelegate, BZFoursquareSessionDelegate>
+@synthesize window = window_;
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	int					checkinCount, timeoutSeconds;
-	BOOL				publicCheckin;
-	
-	int					checkinsMade;
-	
-	MBProgressHUD		*HUD;
+	return YES;
 }
 
-@property(nonatomic,strong) BZFoursquare				*foursquare;
-@property (strong, nonatomic) IBOutlet UILabel			*countlabel;
-@property (strong, nonatomic) IBOutlet UILabel			*timeoutLabel;
-@property (strong, nonatomic) IBOutlet UISlider			*checkinCountSlider;
-@property (strong, nonatomic) IBOutlet UISlider			*timeoutSlider;
-@property (strong, nonatomic) IBOutlet UISwitch			*publicSwitch;
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+	return [[self foursquareObject] handleOpenURL:url];
+}
+
+- (BZFoursquare*)foursquareObject
+{
+	UINavigationController  *navigationController = (UINavigationController *)window_.rootViewController;
+	RootVC					*rootViewController = [navigationController.viewControllers objectAtIndex:0];
+	BZFoursquare			*foursquare = rootViewController.foursquare;
+	
+	return foursquare;
+}
 
 @end
