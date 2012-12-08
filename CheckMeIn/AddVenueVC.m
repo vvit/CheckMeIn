@@ -27,11 +27,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
+	//restore the city
+	_citySearchBar.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"selectedCity"];
+	[_citySearchBar setImage:[UIImage imageNamed:@"dot.png"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
 }
 
 - (void)viewDidUnload
 {
 	[self setSearchBar:nil];
+	[self setCitySearchBar:nil];
 	[super viewDidUnload];
 }
 
@@ -83,7 +88,7 @@
 
 	AppDelegate *del = [UIApplication sharedApplication].delegate;
 	
-	NSDictionary		*parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"Kharkiv, Ukraine", @"near", [NSNumber numberWithInt:50], @"limit", searchTerm, @"query", nil];
+	NSDictionary		*parameters = [NSDictionary dictionaryWithObjectsAndKeys:_citySearchBar.text, @"near", [NSNumber numberWithInt:50], @"limit", searchTerm, @"query", nil];
 	BZFoursquareRequest *request = [[del foursquareObject] requestWithPath:@"venues/search" HTTPMethod:@"GET" parameters:parameters delegate:self];
 	
 	[request start];
@@ -117,8 +122,11 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-	[self search:searchBar.text];
+	[self search:_searchBar.text];
 	[searchBar resignFirstResponder];
+
+	[[NSUserDefaults standardUserDefaults] setObject:_citySearchBar.text forKey:@"selectedCity"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end
