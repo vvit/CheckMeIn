@@ -294,6 +294,9 @@ enum {
 	if (![sender isKindOfClass:[UISlider class]])
 		return;
 	
+	int discreteValue = roundl(sender.value);	// Rounds float to an integer
+    [sender setValue:(float)discreteValue];		// Sets your slider to this value
+
 	_countlabel.text = [NSString stringWithFormat:@"Checkin Count (%.0f):", sender.value];
 }
 
@@ -301,7 +304,10 @@ enum {
 {
 	if (![sender isKindOfClass:[UISlider class]])
 		return;
-	
+
+	int discreteValue = roundl(sender.value);	// Rounds float to an integer
+    [sender setValue:(float)discreteValue];		// Sets your slider to this value
+
 	_timeoutLabel.text = [NSString stringWithFormat:@"Timeout, sec (%.0f):", sender.value];
 }
 
@@ -337,7 +343,7 @@ enum {
 		checkinsMade++;
 		
 		//next request
-		[self performSelector:@selector(doRequest) withObject:nil afterDelay:10.0 + ((checkinsMade%10==0) ? 10 : 0)];
+		[self performSelector:@selector(doRequest) withObject:nil afterDelay:timeoutSeconds + ((checkinsMade%10==0) ? 10 : 0)];
 	}
 	else	//done
 	{
